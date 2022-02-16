@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monthly Budget Planning</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<header>
+    <h1 class="container mx-auto mt-10 text-center title-text text-5xl">Budget Planning &#128176;&#128203; </h1>
+</header>
+
+<body>
+    <section class="container mx-auto mt-10">
+        <div class="grid grid-cols-2 gap-16 ">
+            <!-- left side -->
+            <div>
+                <img class="mx-auto" src="/images/section-img.gif" alt="gif">
+            </div>
+
+            <!-- right side  -->
+            <div class="bg-sky-100/50 section-text">
+                <!-- Income  -->
+                <h3 class=" text-center text-xl font-semibold mt-12">Income</h3>
+                <div class="flex justify-center items-center gap-6 mt-4">
+                    <label class="text-base -ml-4" for="income">
+                        Income:
+                    </label>
+                    <input
+                        class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg  w-64"
+                        id="income-text" type="text" placeholder="Income Amount">
+                </div>
+                <!-- Expenses  -->
+                <h3 class=" text-center text-xl font-semibold mt-7">Expenses</h3>
+
+                <!-- Food  -->
+                <div class="flex justify-center items-center gap-6 mt-4">
+                    <label class="text-base " for="food-cost">
+                        Food:
+                    </label>
+                    <input
+                        class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg  w-64 "
+                        id="food-cost-text" type="text" placeholder="Food Cost">
+                </div>
+
+                <!-- Rent  -->
+                <div class="flex justify-center items-center gap-6 mt-4">
+                    <label class="text-base " for="rent">
+                        Rent:
+                    </label>
+                    <input
+                        class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg  w-64"
+                        id="rent-text" type="text" placeholder="Rent">
+                </div>
+
+                <!-- Clothes  -->
+                <div class="flex justify-center items-center gap-6 mt-4">
+                    <label class="text-base -ml-5" for="clothes-cost">
+                        Clothes:
+                    </label>
+                    <input
+                        class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-64"
+                        id="clothes-cost-text" type="text" placeholder="Clothes Cost">
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+</body>
+
+</html>
