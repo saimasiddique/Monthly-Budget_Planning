@@ -33,3 +33,9 @@
 	position:relative;
 	top:1px;
 }
+
+/* custom breakpoints */
+@media  (max-width: 306px) {
+    
+    .body{background-color: red;}
+  }

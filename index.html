@@ -10,15 +10,17 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<header>
-    <h1 class="container mx-auto mt-10 text-center title-text text-5xl">
-        Budget Planning
-        &#128176;&#128203; </h1>
-</header>
+
 
 <body>
+    <header class="container mx-auto mt-12 ">
+        <h1 class=" text-center title-text text-5xl">
+            Budget Planning
+            &#128176;&#128203; </h1>
+    </header>
+
     <section class="container mx-auto mt-12 mb-20">
-        <div class="grid grid-cols-2 gap-16 ">
+        <div class="grid lg:grid-cols-2 gap-16  ">
             <!-- left side -->
             <div class="flex items-center">
                 <img class="mx-auto " src="/images/lady.gif" alt="gif">
@@ -28,44 +30,44 @@
             <div class="bg-sky-100/50 section-text rounded-lg">
                 <!-- Income  -->
                 <h3 class=" text-center text-xl font-semibold mt-12">Income</h3>
-                <div class="flex justify-center items-center gap-6 mt-4">
+                <div class="flex justify-center items-center gap-2 md:gap-6 mt-4">
                     <label class="text-base -ml-4" for="income">
                         Income:
                     </label>
                     <input
-                        class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-64"
+                        class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 md:w-64"
                         id="income-amount" type="text" value="10000" placeholder="Income Amount">
                 </div>
                 <!-- Expenses  -->
                 <h3 class=" text-center text-xl font-semibold mt-7">Expenses</h3>
 
                 <!-- Food  -->
-                <div class="flex justify-center items-center gap-6 mt-4">
+                <div class="flex justify-center items-center gap-2 md:gap-6 mt-4">
                     <label class="text-base " for="food-cost">
                         Food:
                     </label>
                     <input
-                        class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg  w-64 "
+                        class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 md:w-64 "
                         id="food-cost-amount" type="text" value="3000" placeholder="Food Cost">
                 </div>
 
                 <!-- Rent  -->
-                <div class="flex justify-center items-center gap-6 mt-4">
+                <div class="flex justify-center items-center gap-2 md:gap-6 mt-4">
                     <label class="text-base " for="rent">
                         Rent:
                     </label>
                     <input
-                        class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg  w-64"
+                        class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg  w-50 md:w-64"
                         id="rent-amount" type="text" value="2000" placeholder="Rent">
                 </div>
 
                 <!-- Clothes  -->
-                <div class="flex justify-center items-center gap-6 mt-4 mb-7">
+                <div class="flex justify-center items-center gap-2 md:gap-6 mt-4 mb-7">
                     <label class="text-base -ml-5" for="clothes-cost">
                         Clothes:
                     </label>
                     <input
-                        class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-64"
+                        class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 md:w-64"
                         id="clothes-cost-amount" type="text" value="500" placeholder="Clothes Cost">
                 </div>
 
@@ -81,15 +83,19 @@
                 <h3 class=" text-center text-xl font-semibold mt-6">Balance: <span id="after-balance">0</span></h3>
 
                 <!-- savings% -->
-                <div class="flex justify-center items-center gap-6 mt-6 mb-7">
-                    <label class="text-base -ml-5" for="clothes-cost">
-                        Save:
-                    </label>
-                    <input
-                        class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-32"
-                        id="saved-amount" type="text" value="20" placeholder="Savings">
-                    <p class="text-base">%</p>
-                    <button id="save-btn" class="myButton px-12 py-1">Save</button>
+                <div class="flex flex-col justify-center items-center gap-4 md:flex-row mt-6 mb-7">
+                    <div class="flex gap-6 items-center">
+                        <label class="text-base md:-ml-5" for="saving-cost">
+                            Save:
+                        </label>
+                        <input
+                            class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 -mr-5 md:w-36 md:-mr-0"
+                            id="saved-amount" type="text" value="20" placeholder="Savings">
+                        <span class="text-base ml-3 md:ml-0">%</span>
+                    </div>
+                    <!-- Savings-Btn  -->
+                    <button id="save-btn" class="myButton px-12 py-1 ">Save</button>
+
                 </div>
 
                 <!-- saving amount -->
@@ -103,7 +109,8 @@
         </div>
 
     </section>
-    <footer class="text-stone-900 text-sm bg-emerald-100 font-semibold">
+
+    <footer class="text-stone-900 text-sm bg-emerald-100 font-semibold ">
         <marquee direction="left">&copy;Copyright to Saima Siddique Tashfia</marquee>
     </footer>
 

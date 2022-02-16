@@ -8,4 +8,9 @@ document.getElementById('calculate-btn').addEventListener('click', function () {
     const incomeAmount = document.getElementById('income-amount').value;
     afterBalance = parseFloat(incomeAmount) - totalExpense;
     document.getElementById('after-balance').innerText = afterBalance;
+});
+
+
+document.getElementById('save-btn').addEventListener('click', function () {
+
 })
