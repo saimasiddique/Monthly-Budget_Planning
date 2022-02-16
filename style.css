@@ -12,6 +12,7 @@
     font-family: 'Roboto', sans-serif;
 }
 
+/* Button style */
 .myButton {
 	box-shadow: 0px 10px 14px -7px #276873ad;
 	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);

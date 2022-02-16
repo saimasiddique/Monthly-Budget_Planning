@@ -34,7 +34,7 @@
                     </label>
                     <input
                         class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-64"
-                        id="income-text" type="text" value="10000" placeholder="Income Amount">
+                        id="income-amount" type="text" value="10000" placeholder="Income Amount">
                 </div>
                 <!-- Expenses  -->
                 <h3 class=" text-center text-xl font-semibold mt-7">Expenses</h3>
@@ -46,7 +46,7 @@
                     </label>
                     <input
                         class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg  w-64 "
-                        id="food-cost-text" type="text" value="3000" placeholder="Food Cost">
+                        id="food-cost-amount" type="text" value="3000" placeholder="Food Cost">
                 </div>
 
                 <!-- Rent  -->
@@ -56,7 +56,7 @@
                     </label>
                     <input
                         class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg  w-64"
-                        id="rent-text" type="text" value="2000" placeholder="Rent">
+                        id="rent-amount" type="text" value="2000" placeholder="Rent">
                 </div>
 
                 <!-- Clothes  -->
@@ -66,16 +66,19 @@
                     </label>
                     <input
                         class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-64"
-                        id="clothes-cost-text" type="text" value="500" placeholder="Clothes Cost">
+                        id="clothes-cost-amount" type="text" value="500" placeholder="Clothes Cost">
                 </div>
+
+                <!-- Calculate Button  -->
                 <div class="flex justify-center">
-                    <button class="myButton">Calculate</button>
+                    <button id="calculate-btn" class="myButton">Calculate</button>
                 </div>
 
                 <!-- total expenses -->
-                <h3 class=" text-center text-xl font-semibold mt-8">Total Expenses: <span> 5500</span></h3>
+                <h3 class=" text-center text-xl font-semibold mt-8">Total Expenses: <span id="total-expense">0</span>
+                </h3>
                 <!-- Balance  -->
-                <h3 class=" text-center text-xl font-semibold mt-6">Balance: <span> 4500</span></h3>
+                <h3 class=" text-center text-xl font-semibold mt-6">Balance: <span id="after-balance">0</span></h3>
 
                 <!-- savings% -->
                 <div class="flex justify-center items-center gap-6 mt-6 mb-7">
@@ -84,25 +87,32 @@
                     </label>
                     <input
                         class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-32"
-                        id="clothes-cost-text" type="text" value="20" placeholder="Savings">
+                        id="saved-amount" type="text" value="20" placeholder="Savings">
                     <p class="text-base">%</p>
-                    <button class="myButton px-12 py-1">Save</button>
+                    <button id="save-btn" class="myButton px-12 py-1">Save</button>
                 </div>
 
                 <!-- saving amount -->
-                <h3 class=" text-center text-xl font-semibold mt-8">Saving Amount: <span>2000</span></h3>
+                <h3 class=" text-center text-xl font-semibold mt-8">Saving Amount: <span id="money-saved">2000</span>
+                </h3>
                 <!-- Remaining Balance  -->
-                <h3 class=" text-center text-xl font-semibold mt-6 mb-28">Remaining Balance: <span>2500</span></h3>
+                <h3 class=" text-center text-xl font-semibold mt-6 mb-28">Remaining Balance: <span
+                        id="remaining-balance">2500</span></h3>
 
             </div>
         </div>
 
     </section>
+    <footer class="text-stone-900 text-sm bg-emerald-100 font-semibold">
+        <marquee direction="left">&copy;Copyright to Saima Siddique Tashfia</marquee>
+    </footer>
+
+
+
+    <!-- Script file path -->
     <script src="app.js"></script>
 </body>
 
-<footer class="text-stone-900 text-sm bg-emerald-100 font-semibold">
-    <marquee direction="left">&copy;Copyright to Saima Siddique Tashfia</marquee>
-</footer>
+
 
 </html>
