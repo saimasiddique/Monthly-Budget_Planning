@@ -26,31 +26,6 @@ function calculateBalance(money, credit) {
     return updatedAmount;
 }
 
-// Calculate button event handler 
-document.getElementById('calculate-btn').addEventListener('click', function () {
-
-    const totalExpense = calculateExpenses();
-    document.getElementById('total-expense').innerText = totalExpense;
-
-    const afterBalance = calculateBalance('income', 'expense');
-    document.getElementById('balance-amount').innerText = afterBalance;
-});
-
-// save button event handler 
-document.getElementById('save-btn').addEventListener('click', function () {
-
-    const incomeAmount = document.getElementById('income-amount').value;
-    const saveAmount = document.getElementById('saved-amount').value;
-
-    const savedMoney = parseFloat(incomeAmount) * parseFloat(saveAmount) / 100;
-    document.getElementById('total-saved').innerText = savedMoney;
-
-    const remainingAmount = calculateBalance('balance', 'saved');
-    document.getElementById('remaining-balance').innerText = remainingAmount;
-
-});
-
-
 // error handling
 
 function inputType(x) {
@@ -67,7 +42,7 @@ function inputType(x) {
 
 
         }
-        else if (isNaN(inputText)) {
+        else if (!isNaN(inputText)) {
             document.getElementById(inputID).style.borderColor = "green";
             // alert('good to go');
         }
@@ -78,46 +53,87 @@ function inputType(x) {
 }
 
 function alertBox(y) {
-    //console.log('before', document.getElementById('alertToast').checked);
+
 
     const inputID = y.target.id;
-    console.log(inputID);
+    // console.log(inputID);
     const inputField = document.getElementById(inputID).value;
-    console.log(inputField);
+    // console.log(inputField);
     if (isNaN(inputField) || inputField.length == 0) {
-        //console.log(inputField.length)
+        document.getElementById(inputID).style.borderColor = "red";
+
         if (inputID == 'income-amount') {
 
             document.getElementById('alert-box-income').style.display = 'block';
-            // document.getElementById('alert-box-food').style.display = 'none';
             document.getElementById('alertToast').checked = false;
         }
         else if (inputID == 'food-cost-amount') {
-            console.log('before', document.getElementById('foodcheck').checked);
-            //  document.getElementById('alertToast').checked
+
             document.getElementById('alert-box-food').style.display = 'block';
-            // document.getElementById('alert-box-income').style.display = 'none';
+
             document.getElementById('foodcheck').checked = false;
         }
         else if (inputID == 'rent-amount') {
-            console.log('before', document.getElementById('rentcheck').checked);
 
             document.getElementById('alert-box-rent').style.display = 'block';
 
             document.getElementById('rentcheck').checked = false;
         }
         else if (inputID == 'clothes-cost-amount') {
-            console.log('before', document.getElementById('clothcheck').checked);
 
             document.getElementById('alert-box-cloth').style.display = 'block';
 
             document.getElementById('clothcheck').checked = false;
         }
-        console.log('afterfood', document.getElementById('foodcheck').checked);
-        console.log('afterrent', document.getElementById('rentcheck').checked);
+        else if (inputID == 'saved-amount') {
+
+            document.getElementById('alert-box-saving').style.display = 'block';
+
+            document.getElementById('savingcheck').checked = false;
+        }
 
 
     }
 
+    else {
+        document.getElementById(inputID).style.borderColor = "rgb(226 232 240)";
+    }
+
 
 }
+
+// Calculate button event handler 
+document.getElementById('calculate-btn').addEventListener('click', function () {
+
+    const totalExpense = calculateExpenses();
+    document.getElementById('total-expense').innerText = totalExpense;
+
+    const afterBalance = calculateBalance('income', 'expense');
+    if (afterBalance < 0) {
+        return alert('Please cut of your expenses!!!.');
+
+    }
+    document.getElementById('balance-amount').innerText = afterBalance;
+});
+
+// save button event handler 
+document.getElementById('save-btn').addEventListener('click', function () {
+
+    const incomeAmount = document.getElementById('income-amount').value;
+    const saveAmount = document.getElementById('saved-amount').value;
+
+    const savedMoney = parseFloat(incomeAmount) * parseFloat(saveAmount) / 100;
+    document.getElementById('total-saved').innerText = savedMoney;
+
+    const remainingAmount = calculateBalance('balance', 'saved');
+    if (remainingAmount < 0) {
+        return alert("You can't save more than your income!!! Please decrease your saving amount..");
+    }
+    document.getElementById('remaining-balance').innerText = remainingAmount;
+
+});
+
+
+
+
+

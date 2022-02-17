@@ -53,11 +53,16 @@ html,body
   }
  
   /*Toast close animation*/
- .alert-toast input:checked~* {
+ /* .alert-toast input:checked~* {
 	-webkit-animation: fade-out-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	animation: fade-out-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
   } 
- 
+  */
+  .alert-toast input#alertToast:checked~* {
+	-webkit-animation: fade-out-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: fade-out-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  } 
+
  .alert-toast input#foodcheck:checked~* {
 	-webkit-animation: fade-out-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	animation: fade-out-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -69,7 +74,11 @@ html,body
  .alert-toast input#clothcheck:checked~* {
 	-webkit-animation: fade-out-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 	animation: fade-out-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  } 
+  }  
+ .alert-toast input#savingcheck:checked~* {
+	-webkit-animation: fade-out-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	animation: fade-out-left 0.9s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }  
  
  
  
