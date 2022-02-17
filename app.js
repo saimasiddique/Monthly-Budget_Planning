@@ -52,14 +52,72 @@ document.getElementById('save-btn').addEventListener('click', function () {
 
 
 // error handling
-document.getElementById('income-amount').addEventListener('keyup', function (e) {
-    const inputText = e.target.value;
-    if (isNaN(parseFloat(inputText))) {
-        document.getElementById('income-amount').style.borderColor = "red";
-        alert(inputText, 'is having alphabetic input');
+
+function inputType(x) {
+    const inputID = x.target.id;
+    document.getElementById(inputID).addEventListener('keyup', function (event) {
+
+        const inputText = event.target.value;
+        // for (const char of inputText) {
+        //     console.log(isNaN(inputText));
+        // }
+
+        if (isNaN(inputText)) {
+            document.getElementById(inputID).style.borderColor = "red";
+
+
+        }
+        else if (isNaN(inputText)) {
+            document.getElementById(inputID).style.borderColor = "green";
+            // alert('good to go');
+        }
+
+
+    });
+
+}
+
+function alertBox(y) {
+    //console.log('before', document.getElementById('alertToast').checked);
+
+    const inputID = y.target.id;
+    console.log(inputID);
+    const inputField = document.getElementById(inputID).value;
+    console.log(inputField);
+    if (isNaN(inputField) || inputField.length == 0) {
+        //console.log(inputField.length)
+        if (inputID == 'income-amount') {
+
+            document.getElementById('alert-box-income').style.display = 'block';
+            // document.getElementById('alert-box-food').style.display = 'none';
+            document.getElementById('alertToast').checked = false;
+        }
+        else if (inputID == 'food-cost-amount') {
+            console.log('before', document.getElementById('foodcheck').checked);
+            //  document.getElementById('alertToast').checked
+            document.getElementById('alert-box-food').style.display = 'block';
+            // document.getElementById('alert-box-income').style.display = 'none';
+            document.getElementById('foodcheck').checked = false;
+        }
+        else if (inputID == 'rent-amount') {
+            console.log('before', document.getElementById('rentcheck').checked);
+
+            document.getElementById('alert-box-rent').style.display = 'block';
+
+            document.getElementById('rentcheck').checked = false;
+        }
+        else if (inputID == 'clothes-cost-amount') {
+            console.log('before', document.getElementById('clothcheck').checked);
+
+            document.getElementById('alert-box-cloth').style.display = 'block';
+
+            document.getElementById('clothcheck').checked = false;
+        }
+        console.log('afterfood', document.getElementById('foodcheck').checked);
+        console.log('afterrent', document.getElementById('rentcheck').checked);
+
+
     }
-    else {
-        document.getElementById('income-amount').style.borderColor = "";
-        alert('good to go');
-    }
-})
+
+
+}
