@@ -3,6 +3,9 @@ function calculateExpenses() {
     const rentCost = document.getElementById('rent-amount').value;
     const clothCost = document.getElementById('clothes-cost-amount').value;
     const totalExpense = parseFloat(foodCost) + parseFloat(rentCost) + parseFloat(clothCost);
+    document.getElementById('food-cost-amount').value = "";
+    document.getElementById('rent-amount').value = "";
+    document.getElementById('clothes-cost-amount').value = "";
     return totalExpense;
 }
 
@@ -12,6 +15,7 @@ function calculateBalance(money, credit) {
 
     if (money == 'income') {
         moneyAmount = document.getElementById(money + '-amount').value;
+
     }
     else if (money == 'balance') {
         moneyAmount = document.getElementById(money + '-amount').innerText;
@@ -23,6 +27,7 @@ function calculateBalance(money, credit) {
     const totalExpense = document.getElementById('total-' + credit).innerText;
 
     updatedAmount = parseFloat(moneyAmount) - parseFloat(totalExpense);
+
     return updatedAmount;
 }
 
@@ -140,6 +145,7 @@ document.getElementById('save-btn').addEventListener('click', function () {
     const incomeAmount = document.getElementById('income-amount').value;
     const saveAmount = document.getElementById('saved-amount').value;
 
+
     const savedMoney = parseFloat(incomeAmount) * parseFloat(saveAmount) / 100;
     document.getElementById('total-saved').innerText = savedMoney;
 
@@ -148,7 +154,8 @@ document.getElementById('save-btn').addEventListener('click', function () {
         return alert("You can't save more than your income!!! Please decrease your saving amount..");
     }
     document.getElementById('remaining-balance').innerText = remainingAmount;
-
+    document.getElementById('income-amount').value = "";
+    document.getElementById('saved-amount').value = "";
 });
 
 
