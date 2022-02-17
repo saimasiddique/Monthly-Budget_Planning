@@ -13,13 +13,41 @@
 
 
 <body>
-    <header class="container mx-auto mt-12 ">
+    <header class="container mt-12 mx-auto">
         <h1 class=" text-center title-text text-5xl">
             Budget Planning
             &#128176;&#128203; </h1>
     </header>
 
+
     <section class="container mx-auto mt-12 mb-20">
+
+        <!-- alert toast  -->
+        <div class="alert-toast fixed bottom-0 right-0 ml-6 mr-12 w-5/6 md:w-full max-w-sm text-lg hidden" role="alert">
+            <input type="checkbox" class="hidden" id="alertToast">
+
+            <div class="flex items-center justify-evenly w-full p-2 bg-red-400  text-white h-28 rounded shadow-lg">
+                <svg class="flex-shrink-0 w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd"
+                        d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z"
+                        clip-rule="evenodd"></path>
+                </svg>
+                <p>Footer Alert (Only use X to close)</p>
+
+
+                <label class="close cursor-pointer" title="close" for="alertToast">
+                    <svg class="fill-current text-white" xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                        viewBox="0 0 18 18">
+                        <path
+                            d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z">
+                        </path>
+                    </svg>
+                </label>
+            </div>
+        </div>
+
+        <!-- main section  -->
         <div class="grid lg:grid-cols-2 gap-16  ">
             <!-- left side -->
             <div class="flex items-center">
@@ -30,45 +58,45 @@
             <div class="bg-sky-100/50 section-text rounded-lg">
                 <!-- Income  -->
                 <h3 class=" text-center text-xl font-semibold mt-12">Income</h3>
-                <div class="flex justify-center items-center gap-2 md:gap-6 mt-4">
+                <div class="flex justify-center items-center gap-2 sm:gap-6 mt-4">
                     <label class="text-base -ml-4" for="income">
                         Income:
                     </label>
                     <input
-                        class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 md:w-64"
-                        id="income-amount" type="text" value="10000" placeholder="Income Amount">
+                        class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 sm:w-64"
+                        id="income-amount" type="text" placeholder="Income Amount">
                 </div>
                 <!-- Expenses  -->
                 <h3 class=" text-center text-xl font-semibold mt-7">Expenses</h3>
 
                 <!-- Food  -->
-                <div class="flex justify-center items-center gap-2 md:gap-6 mt-4">
+                <div class="flex justify-center items-center gap-2 sm:gap-6 mt-4">
                     <label class="text-base " for="food-cost">
                         Food:
                     </label>
                     <input
-                        class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 md:w-64 "
-                        id="food-cost-amount" type="text" value="3000" placeholder="Food Cost">
+                        class="shadow  border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 sm:w-64 "
+                        id="food-cost-amount" type="text" placeholder="Food Cost">
                 </div>
 
                 <!-- Rent  -->
-                <div class="flex justify-center items-center gap-2 md:gap-6 mt-4">
+                <div class="flex justify-center items-center gap-2 sm:gap-6 mt-4">
                     <label class="text-base " for="rent">
                         Rent:
                     </label>
                     <input
-                        class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg  w-50 md:w-64"
-                        id="rent-amount" type="text" value="2000" placeholder="Rent">
+                        class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg  w-50 sm:w-64"
+                        id="rent-amount" type="text" placeholder="Rent">
                 </div>
 
                 <!-- Clothes  -->
-                <div class="flex justify-center items-center gap-2 md:gap-6 mt-4 mb-7">
+                <div class="flex justify-center items-center gap-2 sm:gap-6 mt-4 mb-7">
                     <label class="text-base -ml-5" for="clothes-cost">
                         Clothes:
                     </label>
                     <input
-                        class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 md:w-64"
-                        id="clothes-cost-amount" type="text" value="500" placeholder="Clothes Cost">
+                        class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 sm:w-64"
+                        id="clothes-cost-amount" type="text" placeholder="Clothes Cost">
                 </div>
 
                 <!-- Calculate Button  -->
@@ -80,18 +108,18 @@
                 <h3 class=" text-center text-xl font-semibold mt-8">Total Expenses: <span id="total-expense">0</span>
                 </h3>
                 <!-- Balance  -->
-                <h3 class=" text-center text-xl font-semibold mt-6">Balance: <span id="after-balance">0</span></h3>
+                <h3 class=" text-center text-xl font-semibold mt-6">Balance: <span id="balance-amount">0</span></h3>
 
                 <!-- savings% -->
-                <div class="flex flex-col justify-center items-center gap-4 md:flex-row mt-6 mb-7">
+                <div class="flex flex-col justify-center items-center gap-4 sm:flex-row mt-6 mb-7">
                     <div class="flex gap-6 items-center">
-                        <label class="text-base md:-ml-5" for="saving-cost">
+                        <label class="text-base sm:-ml-5" for="saving-cost">
                             Save:
                         </label>
                         <input
-                            class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 -mr-5 md:w-36 md:-mr-0"
-                            id="saved-amount" type="text" value="20" placeholder="Savings">
-                        <span class="text-base ml-3 md:ml-0">%</span>
+                            class="shadow border rounded py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-green-200 focus:border-blue-400  hover:drop-shadow-lg w-50 -mr-5 sm:w-36 sm:-mr-0"
+                            id="saved-amount" type="text" placeholder="Savings">
+                        <span class="text-base ml-3 sm:ml-0">%</span>
                     </div>
                     <!-- Savings-Btn  -->
                     <button id="save-btn" class="myButton px-12 py-1 ">Save</button>
@@ -99,19 +127,20 @@
                 </div>
 
                 <!-- saving amount -->
-                <h3 class=" text-center text-xl font-semibold mt-8">Saving Amount: <span id="money-saved">2000</span>
+                <h3 class=" text-center text-xl font-semibold mt-8">Saving Amount: <span id="total-saved">0</span>
                 </h3>
                 <!-- Remaining Balance  -->
                 <h3 class=" text-center text-xl font-semibold mt-6 mb-28">Remaining Balance: <span
-                        id="remaining-balance">2500</span></h3>
+                        id="remaining-balance">0</span></h3>
 
             </div>
         </div>
 
     </section>
 
-    <footer class="text-stone-900 text-sm bg-emerald-100 font-semibold ">
-        <marquee direction="left">&copy;Copyright to Saima Siddique Tashfia</marquee>
+    <footer class="text-stone-900 text-sm bg-emerald-100 font-semibold text-center">
+        <marquee direction="left" class="mx-auto">&copy;Copyright to Saima Siddique Tashfia</marquee>
+        <!-- &copy;Copyright to Saima Siddique Tashfia -->
     </footer>
 
 
