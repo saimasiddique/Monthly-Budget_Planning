@@ -42,6 +42,24 @@ function inputType(x) {
 
 
         }
+        else if (parseFloat(inputText) < 0) {
+            document.getElementById(inputID).style.borderColor = "red";
+            if (inputID == 'income-amount') {
+                alert("Income amount cannot be negative!");
+            }
+            else if (inputID == 'food-cost-amount') {
+                alert("Food cost cannot be negative!");
+            }
+            else if (inputID == 'rent-amount') {
+                alert("Rent cannot be negative!");
+            }
+            else if (inputID == 'clothes-cost-amount') {
+                alert("Cloth cost cannot be negative!");
+            }
+            else if (inputID == 'saved-amount') {
+                alert("Saving-percentage cannot be negative!");
+            }
+        }
         else if (!isNaN(inputText)) {
             document.getElementById(inputID).style.borderColor = "green";
             // alert('good to go');
